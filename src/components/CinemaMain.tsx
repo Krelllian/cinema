@@ -22,7 +22,7 @@ function CinemaMain() {
                 const response = await axios.get(`https://api.tvmaze.com/search/shows?&q=${searchValue}`);
                 setMovies(response.data)
             } catch (error) {
-                console.error('error: ', error);
+                console.log('error: ', error);
                 setError(true)
             }
         }

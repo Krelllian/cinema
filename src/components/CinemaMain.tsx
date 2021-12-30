@@ -42,7 +42,6 @@ function CinemaMain() {
         document.querySelector('body')?.classList.toggle("lock")
         e.stopPropagation();
     }
-
     const formHandler: React.FormEventHandler<HTMLFormElement> = (e) => {
         e.preventDefault();
         setSearchValue(inputValue);
@@ -58,7 +57,7 @@ function CinemaMain() {
         setMovies(sortedMovie)
         setForceRerender(forceRerender + 1)
     }
-
+    console.log(movies)
     return (
         <>
             <form onSubmit={formHandler}>
@@ -73,12 +72,13 @@ function CinemaMain() {
             <div className='movies'>
                 {movies.map((movie: any) => (
 
-                    movie.show.image?.medium && <><div onClick={popUpHandler} className='movie' key={Math.floor(Math.random() * 1000) + 1 + movie.show.name} >
+                    movie.show.image?.medium && <><div onClick={popUpHandler} className='movie' key={Math.floor(Math.random() * 100000) + movie.show.id} >
                         <h3 className='movie_name'>{movie.show.name}</h3>
+                        <div className='movie_year'> <span>{movie.show.premiered?.substring(0, 4)}</span></div>
                         <div className='movie_score'>Movie rating: <span>{(movie.score * 10).toFixed(1).replace(/.0/gi, "")}</span>/10</div>
                         <img className='movie_img' src={movie.show.image?.medium} />
                     </div>
-                        <div className='movie_popup-wrapper' onClick={removePopUp} key={Math.floor(Math.random() * 1000) + 1 + movie.show.name}>
+                        <div className='movie_popup-wrapper' onClick={removePopUp} key={'PopUp' + movie.show.id}>
                             <div className='movie_popup' style={{
                                 backgroundBlendMode: 'multiply',
                                 backgroundImage: `url(${movie.show.image?.original})`,

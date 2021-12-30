@@ -1,1 +1,1 @@
-# DEMO: https://krelllian.github.io/cinema/build/
+# GitHub Pages: https://krelllian.github.io/cinema/build/

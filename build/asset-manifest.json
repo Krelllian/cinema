@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/cinema/build/static/css/main.83eb5742.css",
+    "main.js": "/cinema/build/static/js/main.3d39736b.js",
+    "static/media/main-bg-5.jpg": "/cinema/build/static/media/main-bg-5.ad74137861e948eddd40.jpg",
+    "index.html": "/cinema/build/index.html",
+    "main.83eb5742.css.map": "/cinema/build/static/css/main.83eb5742.css.map",
+    "main.3d39736b.js.map": "/cinema/build/static/js/main.3d39736b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.83eb5742.css",
+    "static/js/main.3d39736b.js"
+  ]
+}

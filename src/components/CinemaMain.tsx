@@ -27,7 +27,6 @@ function CinemaMain() {
             }
         }
         getMovies()
-        console.log('загрузил фильмы')
     }, [searchValue])
 
     const inputHandler: React.ChangeEventHandler<HTMLInputElement> = (e) => {
@@ -57,7 +56,7 @@ function CinemaMain() {
         setMovies(sortedMovie)
         setForceRerender(forceRerender + 1)
     }
-    console.log(movies)
+
     return (
         <>
             <form onSubmit={formHandler}>

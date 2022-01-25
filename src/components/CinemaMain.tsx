@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './CinemaMain.scss';
-import { CSSTransition, Transition, TransitionGroup } from 'react-transition-group';
 
 
 function CinemaMain() {
@@ -13,6 +12,21 @@ function CinemaMain() {
     const [forceRerender, setForceRerender] = useState(0)
 
     const re = new RegExp('<p>|</p>|<b>|</b>|<i>|</i>', 'ig');
+
+    interface IMovie {
+        score: number;
+        show: {
+            name: string;
+            id: number;
+            premiered: string | null;
+            genres: Array<string>;
+            summary: string;
+            image: {
+                medium: string;
+                original: string;
+            }
+        };
+    }
 
 
     useEffect(() => {
@@ -47,15 +61,16 @@ function CinemaMain() {
         setInputValue('');
     }
     const sortByScoreHighLow: React.MouseEventHandler<HTMLButtonElement> = (e) => {
-        let sortedMovie = movies.sort((a: any, b: any) => b.score - a.score)
+        let sortedMovie = movies.sort((a: IMovie, b: IMovie) => b.score - a.score)
         setMovies(sortedMovie)
         setForceRerender(forceRerender + 1)
     }
     const sortByScoreLowHigh: React.MouseEventHandler<HTMLButtonElement> = (e) => {
-        let sortedMovie = movies.sort((a: any, b: any) => a.score - b.score)
+        let sortedMovie = movies.sort((a: IMovie, b: IMovie) => a.score - b.score)
         setMovies(sortedMovie)
         setForceRerender(forceRerender + 1)
     }
+
 
     return (
         <>
@@ -69,7 +84,7 @@ function CinemaMain() {
             {movies?.length === 0 && <div className='error'>Movie not found, try changing your search parameters</div>}
 
             <div className='movies'>
-                {movies.map((movie: any) => (
+                {movies.map((movie: IMovie) => (
 
                     movie.show.image?.medium && <><div onClick={popUpHandler} className='movie' key={Math.floor(Math.random() * 100000) + movie.show.id} >
                         <h3 className='movie_name'>{movie.show.name}</h3>

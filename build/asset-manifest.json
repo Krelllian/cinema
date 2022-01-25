@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/cinema/build/static/css/main.45d4d74c.css",
-    "main.js": "/cinema/build/static/js/main.565068bf.js",
+    "main.js": "/cinema/build/static/js/main.e17feee4.js",
     "static/media/main-bg-5.jpg": "/cinema/build/static/media/main-bg-5.ad74137861e948eddd40.jpg",
     "index.html": "/cinema/build/index.html",
     "main.45d4d74c.css.map": "/cinema/build/static/css/main.45d4d74c.css.map",
-    "main.565068bf.js.map": "/cinema/build/static/js/main.565068bf.js.map"
+    "main.e17feee4.js.map": "/cinema/build/static/js/main.e17feee4.js.map"
   },
   "entrypoints": [
     "static/css/main.45d4d74c.css",
-    "static/js/main.565068bf.js"
+    "static/js/main.e17feee4.js"
   ]
 }

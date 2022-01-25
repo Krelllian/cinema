@@ -75,7 +75,7 @@ function CinemaMain() {
                         <h3 className='movie_name'>{movie.show.name}</h3>
                         <div className='movie_year'> <span>{movie.show.premiered?.substring(0, 4)}</span></div>
                         <div className='movie_score'>Movie rating: <span>{(movie.score * 10).toFixed(1).replace(/.0/gi, "")}</span>/10</div>
-                        <img className='movie_img' src={movie.show.image?.medium} />
+                        <img className='movie_img' src={movie.show.image?.medium} alt={movie.show.name + ' poster'} />
                     </div>
                         <div className='movie_popup-wrapper' onClick={removePopUp} key={'PopUp' + movie.show.id}>
                             <div className='movie_popup' style={{
